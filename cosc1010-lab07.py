@@ -1,25 +1,29 @@
-# Your Name Here
+# Gabrial Escajeda
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
+# 10/28/24
+# Lab 7
+# Lab Section: 14
 # Sources, people worked with, help given to: 
 # your
 # comments
 # here
 
 
-# Prompt the user for an upper bound 
+#
 # Write a while loop that gives the factorial of that upper bound
 # This will need to be a positive number
 # For this you will need to check to ensure that the user entered a number
     # To do so you can use the methods `.isdigit()` or `.isnumeric()`
     # If a user did not enter a number output a statement saying so
-# You will continue to prompt the user until a proper integer value is entered
+#  Prompt the user for an upper bound You will continue to prompt the user until a proper integer value is entered
 
 factorial = 1
 
+while(True):
+    
+
 print(f"The result of the factorial based on the given bound is {factorial}")
+
 
 print("*"*75)
 # Create a while loop that prompts a user for input of an integer values
