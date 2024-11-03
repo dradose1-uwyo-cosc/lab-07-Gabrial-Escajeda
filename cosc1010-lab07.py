@@ -85,12 +85,46 @@ print("*"*75) #<-------- whats the deal with these equations? why are they here?
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 
-math = 0
+answer = 0
 
 while True:
-    cat = input("Please enter equation, only accepts positive numbers: ")
+    cat = input("Please enter equation: ")
     if cat.upper() == "EXIT":
         break
+    goofy_guys = ['+','-','*','/','%']
+    silly_guys = None
+    for goofy in goofy_guys:
+        if goofy in cat:
+            silly_guys = goofy
+            break
+    if silly_guys is None:
+        print("There is no operator, please try again")
+        continue
+    if silly_guys:
+        guys = cat.split(silly_guys)
+        guys = [dogs.strip() for dogs in guys]
+        if len(guys) != 2:
+            print("To many operands, try again")
+        axolotl = True
+        for guy in guys:
+            if guy.isnumeric() is False:
+                print("At least one of the operands are not valid")
+                axolotl = False
+                break
+        if axolotl:
+            axol = int(guys[0])
+            otl = int(guys[1])
+            if silly_guys == '+':
+                math = axol + otl
+            if silly_guys == '-':
+                math = axol - otl
+            if silly_guys == '*':
+                math = axol * otl
+            if silly_guys == '/':
+                math = axol / otl
+            if silly_guys == '%':
+                math = axol % otl
+            print(f"The solution to your problem is {answer}")
 
-            
-    
+
+                
