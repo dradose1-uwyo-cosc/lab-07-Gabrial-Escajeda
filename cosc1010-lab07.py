@@ -1,6 +1,6 @@
 # Gabrial Escajeda
 # UWYO COSC 1010
-# 10/28/24
+# 11/3/24
 # Lab 7
 # Lab Section: 14
 # Sources, people worked with, help given to: 
@@ -19,13 +19,19 @@
 
 factorial = 1
 
-while(True):
-    
+while True:
+    upper_bound = input("Upper Bound: ")
+    if upper_bound.isnumeric() and int(upper_bound) > 0:
+        upper_bound = int(upper_bound)
+        for n in range(1, upper_bound+1):
+            factorial *= n           
+        break
+    else:
+        print("Invalid, please make sure number is positive and try again")
 
 print(f"The result of the factorial based on the given bound is {factorial}")
-
-
 print("*"*75)
+
 # Create a while loop that prompts a user for input of an integer values
 # Sum all inputs. When the user enters 'exit' (regardless of casing) end the loop
 # Upon ending the loop print the sum
@@ -41,11 +47,27 @@ print("*"*75)
 # All this together means you will have an intensive while loop that includes multiple if statements, likely with some nesting 
 # The sum should start at 0 
 
-num_sum = 0 
+num_sum = 0
 
-print(f"Your final sum is {num_sum}")
+while True:
+    hehe = input("Please enter a number or type 'exit' to exit: ")
+    if hehe.upper() == 'EXIT':
+        break
+    if hehe.startswith('-'):
+        haha = hehe.replace('-','')
+        if haha.isnumeric():
+            num_sum += int(hehe)
+        else:
+            print("Oops, Please input a number or type 'exit' to exit")
+    elif hehe.isnumeric() and int(hehe):
+        num_sum += int(hehe)
+    else:
+        print("Oops, Please input a number or type 'exit' to exit")
+        
+print(f"Total value is {num_sum}")
 
-print("*"*75)
+print("*"*75) #<-------- whats the deal with these equations? why are they here? did I add them? I'm keeping them in case they're important
+
 # Now you will be creating a two operand calculator
 # It will support the following operators: +,-,/,*,% 
 # So accepted input is of the form `operand operator operand` 
@@ -63,4 +85,12 @@ print("*"*75)
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 
-        
+math = 0
+
+while True:
+    cat = input("Please enter equation, only accepts positive numbers: ")
+    if cat.upper() == "EXIT":
+        break
+
+            
+    
